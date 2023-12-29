@@ -1,0 +1,123 @@
+POST http://localhost:3001/auth/register
+Content-Type: application/json
+
+{
+    "userName": "Tom",
+    "userEmail": "tom01@a.i",
+    "userPassword": "1234"
+}
+
+###
+
+POST http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+    "userEmail": "r01@a.i",
+    "userPassword": "1234"
+}
+
+###
+
+GET http://localhost:3001/editor/notebooks/6586a5be40395446f4453d86
+Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ODZhNWJlNDAzOTU0NDZmNDQ1M2Q4NiIsImlhdCI6MTcwMzMyMzA5MywiZXhwIjoxNzAzMzIzMTkzfQ.JmQ7AxJh33G7VN3cDs2ChuGuWixZOiu_IwN9cx1xpCQ"
+
+###
+
+POST http://localhost:3001/editor/notebooks
+Content-Type: application/json
+
+{
+    "data": {
+        "notebookHeading": "MachineLearning!",
+        "notebookDescription": "This is a virtual notebook for my machine learning topics, required for the upcoming exam. Topics - Regression, CNN, ...",
+        "notebookCreationDetails": "15:30 | Dec 15, 2023",
+        "notebookBackgroundColor": "#36CC8D",
+        "notebookColors": [
+            "#3985F4", 
+            "#5EB553", 
+            "#F4C01F", 
+            "#f1567a", 
+            "#EC5E3C", 
+            "#E6445A", 
+            "#7768E4"
+        ],
+        "notebookCurrentColor": 4,
+        "notebookCurrentPageNo": 0,
+        "notebookStrokeSize": 20,
+        "createdPages": []
+    },
+    "userId": "657d4e6e12fbc79d248ac267"
+}
+
+###
+
+PUT http://localhost:3001/editor/notebooks
+Content-Type: application/json
+
+{
+    "_id": "657d6987f495f755b06c98ab",
+    "notebookHeading": "Mac Learning!",
+    "notebookDescription": "This is a virtual notebook for my machine learning topics, required for the upcoming exam. Topics - Regression, CNN, ...",
+    "notebookCreationDetails": "15:30 | Dec 15, 2023",
+    "notebookBackgroundColor": "#36CC8D",
+    "notebookColors": [
+        "#3985F4",
+        "#5EB553",
+        "#F4C01F",
+        "#f1567a",
+        "#EC5E3C",
+        "#E6445A",
+        "#7768E4"
+    ],
+    "notebookCurrentColor": 4,
+    "notebookCurrentPageNo": 0,
+    "notebookStrokeSize": 20,
+    "createdPages": [
+        "657d73b6945eab981fb689f7"
+    ],
+    "__v": 3
+}
+
+###
+
+DELETE http://localhost:3001/editor/notebooks/657d4e6e12fbc79d248ac267/657ef3ec4a86f49b34764a56
+
+###
+
+GET http://localhost:3001/editor/pages/657ff6bf5477e7f8bce04391
+
+###
+
+POST http://localhost:3001/editor/pages
+Content-Type: application/json
+
+{
+    "pageContent": "lo bete, this is not a page !",
+    "notebookId": "657d6987f495f755b06c98ab"
+}
+
+###
+
+PUT http://localhost:3001/editor/pages/657d73b6945eab981fb689f7
+Content-Type: application/json
+
+{
+    "pageContent": "Hete! I m not Chumbasaur."
+}
+
+###
+
+DELETE http://localhost:3001/editor/pages/657d6987f495f755b06c98ab/657d730270f3c48a39a33a81
+
+###
+
+POST http://localhost:3001//contact/dm
+Content-Type: application/json
+Authorization: "ALLOWED"
+
+{
+    "contactName": "Ravi",
+    "contactEmail": "amiableravi123@gmail.com",
+    "contactMessage": "hey!"
+}
