@@ -91,6 +91,7 @@ router.delete(
 router.get("/pages/:notebookId", async (req, res) => {
     try {
         const notebook = await NotebookModel.findById(req.params.notebookId);
+        if (!notebook) return res.json([]);
         const Pages = await PageModel.find({
             _id: {
                 $in: notebook.createdPages,
